@@ -1,0 +1,18 @@
+.tags{
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    height: 20px;
+    margin-bottom: 4px;
+    overflow: hidden;
+}
+.tag{
+    display: inline-block;
+    padding: 2px 5px;
+    height: 20px;
+    border: 1px solid #000;
+    border-radius: 2px;
+    font-size: 12px;
+    line-height: 14px;
+    margin-right: 8px;
+}

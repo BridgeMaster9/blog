@@ -1,0 +1,40 @@
+.header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 22px;
+    height: 80px;
+    background-color: #FFFFFF;
+}
+.left{
+    display: block;
+    width: 147px;
+    height: 56px;
+}
+.left span{
+    font-size: 18px;
+    line-height: 56px;
+    vertical-align: middle;
+}
+.btn{
+    width: 109px;
+    height: 51px;
+    border: none;
+    font-size: 18px;
+    line-height: 28px;
+    background-color: #FFFFFF;
+    cursor: pointer;
+    &:first-child{
+        margin-right: 15px;
+    }
+    &:active, &:hover{
+        color: #52C41A;
+        border: 1px solid #52C41A;
+        border-radius: 5px;
+    }
+}
+
+
+
+
