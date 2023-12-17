@@ -1,7 +1,6 @@
 class SeviceRealworld {
   baseURL = 'https://blog.kata.academy/api/'
 
-
   async sendRequest(url, data, method, token) {
     // prettier-ignore
     const options = data
