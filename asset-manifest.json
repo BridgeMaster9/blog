@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/blog/static/css/main.7c596ba3.css",
+    "main.js": "/blog/static/js/main.04717779.js",
+    "static/media/Roboto-Medium.ttf": "/blog/static/media/Roboto-Medium.13a29228654d5c5ec9c4.ttf",
+    "static/media/Roboto-Regular.ttf": "/blog/static/media/Roboto-Regular.03523cf578d69fa92322.ttf",
+    "static/media/Roboto-Bold.ttf": "/blog/static/media/Roboto-Bold.4f39c5796e60c9d8e732.ttf",
+    "static/media/Inter-Bold.woff2": "/blog/static/media/Inter-Bold.c08e610806161507e8e3.woff2",
+    "static/media/Inter-SemiBold.woff2": "/blog/static/media/Inter-SemiBold.90f5c90fdecd8895f496.woff2",
+    "static/media/Inter-Medium.woff2": "/blog/static/media/Inter-Medium.01f03178adde434fc9fa.woff2",
+    "static/media/Inter-Regular.woff2": "/blog/static/media/Inter-Regular.bd097ceff83f90802a12.woff2",
+    "static/media/white_heart.svg": "/blog/static/media/white_heart.6fcb83b819046cfd6b30.svg",
+    "static/media/red_heart.svg": "/blog/static/media/red_heart.6296fc57729b604f2c52.svg",
+    "index.html": "/blog/index.html",
+    "main.7c596ba3.css.map": "/blog/static/css/main.7c596ba3.css.map",
+    "main.04717779.js.map": "/blog/static/js/main.04717779.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7c596ba3.css",
+    "static/js/main.04717779.js"
+  ]
+}
