@@ -1,3 +1,3 @@
-import ArticleItem from "./article-item";
+import ArticleItem from './article-item'
 
 export default ArticleItem

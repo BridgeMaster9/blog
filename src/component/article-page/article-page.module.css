@@ -1,22 +1,22 @@
-.article{
-    box-shadow: 0px 4px 12px 0px  #00000026;
-    background-color: #FFFFFF;
-    padding: 15px 15px 105px 15px;
-    width: 938px;
-    margin: 0 auto;
+.article {
+  box-shadow: 0px 4px 12px 0px #00000026;
+  background-color: #ffffff;
+  padding: 15px 15px 105px 15px;
+  width: 938px;
+  margin: 0 auto;
 }
-.top{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin-bottom: 26px;
+.top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 26px;
 }
-.main-text{
-    overflow-wrap: anywhere;
-    font-family: 'InterUI', Arial, sans-serif;
-    font-weight: normal;
+.main-text {
+  overflow-wrap: anywhere;
+  font-family: 'InterUI', Arial, sans-serif;
+  font-weight: normal;
 }
-.spin{
-    margin: 20px;
-    margin-left: 50%;
+.spin {
+  margin: 20px;
+  margin-left: 50%;
 }

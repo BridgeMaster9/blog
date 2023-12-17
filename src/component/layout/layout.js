@@ -1,22 +1,19 @@
-import React from 'react'
-import {Outlet} from "react-router-dom";
 import styles from './layout.module.css'
-import serviceRealworld from "../../services/service-realworld";
+import ServiceRealworld from '../../services/service-realworld'
 
 import Header from '../header'
+import { Outlet } from 'react-router-dom'
+import React from 'react'
 
-
-const Layout = () =>{
-  const service = new serviceRealworld()
-  return(
+function Layout() {
+  const service = new ServiceRealworld()
+  return (
     <>
-      <Header/>
+      <Header />
       <main className={styles.main}>
-        <Outlet context={service}/>
+        <Outlet context={service} />
       </main>
-      <footer>
-
-      </footer>
+      <footer />
     </>
   )
 }
