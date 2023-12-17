@@ -1,47 +1,53 @@
-import {useEffect, useState, useRef} from 'react'
+import {useEffect, useState} from 'react'
 import styles from './article-list.module.css'
 import {  Pagination  } from 'antd'
 import ArticleItem from '../article-item'
-import SeviceRealworld from '../../services/service-realworld'
 import {setArticles} from "../../redux/actions";
 import {useDispatch, useSelector} from "react-redux";
-import {Link} from "react-router-dom";
+import {Spin} from 'antd'
+import {setLoading} from "../../redux/actions";
+import {getCookie} from "react-use-cookie";
+import {useOutletContext} from 'react-router-dom'
 
 
 const ArticleList = ()=>{
   const [pageNumber, setPageNumber] = useState(1)
   const articlesData = useSelector(state=>state.articles)
+  const loading = useSelector(state=>state.mode.loading)
   const dispatch = useDispatch()
-  const serviceRef = useRef(0)
-  const service = new SeviceRealworld()
+  const service = useOutletContext()
 
-  serviceRef.current = service
 
   const onChange = (page)=>{
     setPageNumber(page)
   }
 
   useEffect(()=>{
-    service.getArticles((pageNumber-1)*10).then((res)=>{
+    const token = getCookie('Token')
+    dispatch(setLoading(true))
+    service.getArticles((pageNumber-1)*10, token).then((res)=>{
       dispatch(setArticles(res.articles))
     })
+    dispatch(setLoading(false))
   }, [pageNumber])
 
-  const items = articlesData.map((elem, index)=>{
-    console.log(elem)
-    return(
-      <li key={`${elem.title} + ${index}`}>
-        <Link className={styles.post} to={elem.slug}><ArticleItem data={elem}/></Link>
-      </li>
-    )
-  })
-
-  return (
+  const content = loading?(
+    <Spin className={styles.spin} size="large"/>
+  ):(
     <ul className={styles.list}>
-      {items}
+      {articlesData.map((elem, index)=>{
+        return(
+          <li key={`${elem.title} + ${index}`}>
+            <div className={styles.post}>
+              <ArticleItem data={elem} slug={elem.slug}/>
+            </div>
+          </li>
+        )})}
       <Pagination className={styles.pagination} current={pageNumber} size="small" total={100} onChange={onChange} showSizeChanger={false}/>
     </ul>
   )
+
+  return content
 }
 
 export default ArticleList

@@ -1,1 +1,41 @@
+@font-face {
+    font-family: "InterUI";
+    src: local("InterRegular"), url("./fonts/Inter/Inter-Regular.woff2");
+    font-weight: normal;
+}
+@font-face {
+    font-family: "InterUI";
+    src: local("InterBold"), url("./fonts/Inter/Inter-Bold.woff2");
+    font-weight: 700;
+}
+@font-face {
+    font-family: "InterUI";
+    src: local("InterSemiBold"), url("./fonts/Inter/Inter-SemiBold.woff2");
+    font-weight: 600;
+}
+@font-face {
+    font-family: "InterUI";
+    src: local("InterMedium"), url("./fonts/Inter/Inter-Medium.woff2");
+    font-weight: 500;
+}
 
+@font-face {
+    font-family: "Roboto";
+    src: local("RobotoRegular"), url("./fonts/Roboto/Roboto-Regular.ttf");
+    font-weight: normal;
+}
+@font-face {
+    font-family: "Roboto";
+    src: local("RobotoBold"), url("./fonts/Roboto/Roboto-Bold.ttf");
+    font-weight: 700;
+}
+@font-face {
+    font-family: "Roboto";
+    src: local("RobotoMedium"), url("./fonts/Roboto/Roboto-Medium.ttf");
+    font-weight: 500;
+}
+input::placeholder{
+    font-weight: normal;
+    line-height: 24px;
+    color: #BFBFBF;
+}

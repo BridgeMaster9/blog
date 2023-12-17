@@ -1,11 +1,6 @@
 .main{
     background-color: #EBEEF3;
     padding-top: 26px;
-    padding-bottom: 15px;
-}
-
-.wrapper{
-    width: 938px;
-    margin: 0 auto;
-    background-color: white;
+    padding-bottom: 65px;
+    min-height: 988px;
 }

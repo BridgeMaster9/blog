@@ -1,2 +1,7 @@
-export const setArticles = (data)=>({type: 'SET_NEW_ARTICLES', payload: data})
+export const setArticles = (data)=>({type: 'SET_ARTICLES', payload: data})
 export const setTags = (data)=>({type: 'SET_TAGS', payload: data})
+export const setUser = (data)=>({type: 'SET_USER', payload: data})
+export const setAuth = (data)=>({type: 'SET_AUTH', payload: data})
+export const setLogin = (data)=>({type: 'SET_LOGIN', payload: data})
+export const setLoading = (data)=>({type: 'SET_LOADING', payload: data})
+export const setArticle=(data)=>({type: 'SET_ARTICLE', payload: data})
