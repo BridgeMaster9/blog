@@ -2,7 +2,6 @@ import styles from './profile-pages.module.css'
 import { setUser, setLogin, setLoading } from '../../redux/actions'
 import { useForm } from 'react-hook-form'
 import { useDispatch, useSelector } from 'react-redux'
-import { setCookie } from 'react-use-cookie'
 import { useState } from 'react'
 import { Link, useNavigate, useLocation, useOutletContext } from 'react-router-dom'
 import { Spin } from 'antd'
@@ -34,7 +33,7 @@ function SignIn() {
       })
       .then((data) => {
         dispatch(setLoading(false))
-        setCookie('Token', data.user.token, { secure: true })
+        localStorage.setItem('Token', data.user.token)
         dispatch(setLogin(true))
         dispatch(
           setUser({

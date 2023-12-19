@@ -1,6 +1,5 @@
 import ArticleForm from '../article-form'
 import { useState } from 'react'
-import { getCookie } from 'react-use-cookie'
 import { useOutletContext, useNavigate } from 'react-router-dom'
 
 function ArticleCreatePage() {
@@ -10,7 +9,7 @@ function ArticleCreatePage() {
   const navigate = useNavigate()
 
   const submit = ({ title, description, body, tags }) => {
-    const token = getCookie('Token')
+    const token = localStorage.getItem('Token')
     service
       .createArticle({ article: { title, description, body, tagList: tags } }, token)
       .then((data) => {

@@ -45,6 +45,11 @@ class SeviceRealworld {
     return newUser
   }
 
+  async getCurrentUser(token) {
+    const currentUser = this.sendRequest('user', '', 'GET', token)
+    return currentUser
+  }
+
   async getArticle(slug, token) {
     const article = this.sendRequest(`articles/${slug}`, '', 'GET', token)
     return article

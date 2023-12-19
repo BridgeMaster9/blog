@@ -9,9 +9,32 @@ import EditProfile from '../profile-pages/edit-profile'
 import ArticleCreatePage from '../article-pages/article-create-page'
 import EditArticlePage from '../article-pages/edit-article-page'
 import RequireAuth from '../HOC/RequireAuth'
+import ServiceRealworld from '../../services/service-realworld'
+import { setLogin, setUser } from '../../redux/actions'
 import { Routes, Route, Navigate } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
+import { useEffect } from 'react'
 
 function App() {
+  const dispatch = useDispatch()
+  const service = new ServiceRealworld()
+
+  useEffect(() => {
+    const token = localStorage.getItem('Token')
+    if (token) {
+      service.getCurrentUser(token).then((data) => {
+        dispatch(setLogin(true))
+        dispatch(
+          setUser({
+            username: data.user.username,
+            email: data.user.email,
+            image: data.user.image,
+          })
+        )
+      })
+    }
+  }, [])
+
   return (
     <div className="App">
       <Routes>

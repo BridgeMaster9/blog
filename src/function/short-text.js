@@ -1,4 +1,5 @@
 export const shortText = (text, type) => {
+  if (!text) return text
   if (type === 'description') {
     if (text.length > 150) return `${text.slice(0, 200)}...`
     if (!/\S/.test(text)) {

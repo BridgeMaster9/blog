@@ -1,6 +1,5 @@
 import ArticleForm from '../article-form'
 import { useState } from 'react'
-import { getCookie } from 'react-use-cookie'
 import { useParams, useOutletContext, useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 
@@ -14,7 +13,7 @@ function EditArticlePage() {
   const data = useSelector((state) => state.article)
 
   const submit = ({ title, description, body, tags }) => {
-    const token = getCookie('Token')
+    const token = localStorage.getItem('Token')
     service
       .updateArticle(slug, { article: { title, description, body, tagList: tags } }, token)
       .then((res) => {

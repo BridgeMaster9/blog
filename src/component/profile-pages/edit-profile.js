@@ -2,7 +2,6 @@ import styles from './profile-pages.module.css'
 import { setUser } from '../../redux/actions'
 import { useForm } from 'react-hook-form'
 import { useDispatch, useSelector } from 'react-redux'
-import { getCookie } from 'react-use-cookie'
 import { useState } from 'react'
 import { useOutletContext } from 'react-router-dom'
 
@@ -26,7 +25,7 @@ function EditProfile() {
   })
 
   const onSubmit = ({ username, email, image }) => {
-    const token = getCookie('Token')
+    const token = localStorage.getItem('Token')
     service
       .updateUser(
         {

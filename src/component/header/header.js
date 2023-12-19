@@ -4,7 +4,6 @@ import { setAuth, setUser, setLogin } from '../../redux/actions'
 import { Link } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import React from 'react'
-import { setCookie } from 'react-use-cookie'
 
 function Header() {
   const login = useSelector((state) => state.mode.login)
@@ -12,7 +11,7 @@ function Header() {
   const dispatch = useDispatch()
 
   const logOut = () => {
-    setCookie('Token', '')
+    localStorage.removeItem('Token')
     dispatch(setLogin(false))
     dispatch(setAuth(false))
     dispatch(setUser(null))

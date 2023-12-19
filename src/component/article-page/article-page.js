@@ -4,7 +4,6 @@ import { setArticle, setLoading } from '../../redux/actions'
 import { useParams, useOutletContext } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import { useEffect, useState } from 'react'
-import { getCookie } from 'react-use-cookie'
 import Markdown from 'markdown-to-jsx'
 import { Spin } from 'antd'
 
@@ -17,7 +16,7 @@ const ArticlePage = () => {
 
   useEffect(() => {
     dispatch(setLoading(true))
-    const token = getCookie('Token')
+    const token = localStorage.getItem('Token')
     service
       .getArticle(slug, token)
       .then((res) => {

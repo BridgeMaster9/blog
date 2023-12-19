@@ -3,7 +3,6 @@ import { setUser, setAuth, setLogin, setLoading } from '../../redux/actions'
 import { useForm } from 'react-hook-form'
 import { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { setCookie } from 'react-use-cookie'
 import { Link, useOutletContext, useNavigate } from 'react-router-dom'
 import { Spin } from 'antd'
 
@@ -33,7 +32,7 @@ function SignUp() {
       })
       .then((data) => {
         dispatch(setLoading(false))
-        setCookie('Token', data.user.token, { secure: true })
+        localStorage.setItem('Token', data.user.token)
         dispatch(setAuth(true))
         dispatch(
           setUser({

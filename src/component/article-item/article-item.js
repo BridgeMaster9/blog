@@ -7,7 +7,6 @@ import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
 import { Link, useNavigate, useParams, useOutletContext } from 'react-router-dom'
 import { Popconfirm } from 'antd'
-import { getCookie } from 'react-use-cookie'
 
 function ArticleItem({ data: articleData, slug }) {
   const login = useSelector((state) => state.mode.login)
@@ -18,7 +17,7 @@ function ArticleItem({ data: articleData, slug }) {
   const slugParam = useParams().slug
 
   const confirm = () => {
-    const token = getCookie('Token')
+    const token = localStorage.getItem('Token')
     service
       .deleteArticle(slug, token)
       .then(() => {
@@ -31,7 +30,7 @@ function ArticleItem({ data: articleData, slug }) {
   }
 
   const onLikeClick = () => {
-    const token = getCookie('Token')
+    const token = localStorage.getItem('Token')
     if (token) {
       if (data.favorited) {
         service

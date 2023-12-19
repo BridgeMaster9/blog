@@ -4,7 +4,6 @@ import { setArticles, setLoading } from '../../redux/actions'
 import { useEffect, useState } from 'react'
 import { Pagination, Spin } from 'antd'
 import { useDispatch, useSelector } from 'react-redux'
-import { getCookie } from 'react-use-cookie'
 import { useOutletContext } from 'react-router-dom'
 
 const ArticleList = () => {
@@ -19,7 +18,7 @@ const ArticleList = () => {
   }
 
   useEffect(() => {
-    const token = getCookie('Token')
+    const token = localStorage.getItem('Token')
     dispatch(setLoading(true))
     service.getArticles((pageNumber - 1) * 10, token).then((res) => {
       dispatch(setArticles(res.articles))
@@ -31,8 +30,8 @@ const ArticleList = () => {
     <Spin className={styles.spin} size="large" />
   ) : (
     <ul className={styles.list}>
-      {articlesData.map((elem, index) => (
-        <li key={`${elem.title} + ${index}`}>
+      {articlesData.map((elem) => (
+        <li key={elem.slug}>
           <div className={styles.post}>
             <ArticleItem data={elem} slug={elem.slug} />
           </div>
